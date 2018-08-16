@@ -11,17 +11,17 @@
     --font-main-title: 'Alegreya', serif;
     --font-middle-title: 'Roboto Condensed', sans-serif;
     --font-content: Arial, Helvetica, sans-serif;
-    
     /* color */
     --dark-teal: #395e6b;
+    --middle-teal: #c1d5dc;
+    --light-teal: #e3e8eb;
     --dark-grey: #5d5d5d;
     /* main text color */
     --middle-grey: #afaeac;
     --alpha-middle-grey: rgba(175, 174, 172, 0.2);
     /* grey in footer*/
     --light-grey: #f5f5f5;
-    --white : #ffffff;
-
+    --white: #ffffff;
     /* border */
     --dash-border: 1px dashed --middle-grey;
 }
@@ -40,10 +40,10 @@ body {
 }
 
 .wrapper {
-    height: 100vh;
+    height: 100%;
     padding: 1rem;
     display: grid;
-    grid-template: [header-top] "logo nav nav" 2fr [header-bottom intro-top] "intro intro intro" 4fr [intro-bottom content-top]"side-left content side-right" 4fr[content-bottom footer-top] "footer footer footer" 2fr [footer-bottom] / 2fr 2.5fr 2fr;
+    grid-template: [header-top] "logo nav nav" 1fr [header-bottom intro-top] "intro intro intro" 4fr [intro-bottom content-top]"side-left content side-right" 4fr[content-bottom footer-top] "footer footer footer" 1fr [footer-bottom] / 2fr 2.5fr 2fr;
     grid-gap: 10px;
 }
 
@@ -95,6 +95,7 @@ body {
 }
 
 /* Header >> nav */
+
 nav ul {
     list-style-type: none;
     display: flex;
@@ -119,4 +120,72 @@ nav ul a {
     text-decoration: none;
     text-transform: uppercase;
     color: var(--dark-teal);
+}
+
+/*** Intro ***/
+
+.intro {
+    background: linear-gradient(var(--light-teal), var(--middle-teal) 70px);
+    position: relative;
+    z-index: 1;
+    padding: 50px;
+}
+
+.intro:before {
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 20%;
+    content: "";
+    background: var(--white);
+}
+
+.intro section {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.intro section div{
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+}
+
+.intro__imgs_container img {
+    border-radius: 50%;
+    border: 1px solid var(--dark-teal);
+    width: 15rem;
+    height: 15rem;
+    margin-right: 2rem;
+}
+
+.intro__main_text {
+    font-family: var(--font-middle-title);
+    font-size: 2.8rem;
+    color: var(--dark-teal);
+    font-weight: bold;
+}
+
+.intro__main_text span {
+    font-size: 2rem;
+}
+
+.intro_content{
+    font-size: 1.2rem;
+    color: var(--dark-teal);
+}
+
+.intro_content a{
+    color: var(--dark-teal);
+}
+
+.intro__smiling-man{
+    display: inline-block;
+    width: 50%;
+    height: 100%;
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
 }
