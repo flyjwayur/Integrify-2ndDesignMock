@@ -11,27 +11,28 @@
     --font-main-title: 'Alegreya', serif;
     --font-middle-title: 'Roboto Condensed', sans-serif;
     --font-content: Arial, Helvetica, sans-serif;
+    
     /* color */
-    --dark-teal: #395e6b; /* small case in case of linting*/
-    /* main color */
-    --light-teal: #7f8b89;
+    --dark-teal: #395e6b;
     --dark-grey: #5d5d5d;
-    --middle-grey: #afaeac;
     /* main text color */
-    --light-grey: #f5f5f5;
+    --middle-grey: #afaeac;
+    --alpha-middle-grey: rgba(175, 174, 172, 0.2);
     /* grey in footer*/
+    --light-grey: #f5f5f5;
+    --white : #ffffff;
+
     /* border */
     --dash-border: 1px dashed --middle-grey;
 }
-
 
 /****** Main *******/
 
 h3 {
     text-transform: uppercase;
-} 
+}
 
-/* Entire layout with Grid **/
+/*** Entire layout with Grid ***/
 
 body {
     font-family: var(--font-content);
@@ -46,34 +47,76 @@ body {
     grid-gap: 10px;
 }
 
+/*** Testing ***/
+
 .wrapper div {
-    background: green;
+    border: 1px solid black;
 }
 
-.logo{
+.logo {
     grid-area: logo;
 }
 
-.nav{
+.navigation {
     grid-area: nav;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: #ffffff;
 }
 
-.intro{
+.intro {
     grid-area: intro;
 }
 
-.side-left{
+.side-left {
     grid-area: side-left;
 }
 
-.content{
+.content {
     grid-area: content;
 }
 
-.side-right{
+.side-right {
     grid-area: side-right;
 }
 
-.footer{
+.footer {
     grid-area: footer;
+}
+
+/*** Header ***/
+
+/* Header >> logo */
+
+.logo img {
+    width: 100%;
+    height: 100%;
+}
+
+/* Header >> nav */
+nav ul {
+    list-style-type: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+nav ul li {
+    display: inline-block;
+    background: linear-gradient(var(--white) 0.4rem, var(--middle-grey));
+    border-bottom: 1px solid var(--middle-grey);
+    box-shadow: inset -5px -5px 10px 20px var(--alpha-middle-grey);
+    text-align: center;
+    align-self: center;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
+nav ul a {
+    text-decoration: none;
+    text-transform: uppercase;
+    color: var(--dark-teal);
 }
