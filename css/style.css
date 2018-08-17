@@ -49,9 +49,11 @@ body {
 
 /*** Testing ***/
 
+/*
 .wrapper div {
     border: 1px solid black;
 }
+*/
 
 .logo {
     grid-area: logo;
@@ -98,9 +100,10 @@ body {
 
 nav ul {
     list-style-type: none;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: repeat(5, minmax(max-content, 1fr));
+    grid-gap: 0.5rem;
+    transform: translateY(1rem);
 }
 
 nav ul li {
