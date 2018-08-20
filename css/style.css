@@ -218,6 +218,10 @@ nav ul a {
     color: var(--middle-grey);
 }
 
+.side-left__link{
+    color: black;
+}
+
 .content section p {
     font-size: 1.2rem;
     padding: 0.5rem;
