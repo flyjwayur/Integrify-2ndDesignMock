@@ -166,7 +166,7 @@ nav ul a {
 }
 
 
-.intro__imgs-container img {
+.intro__circle-imgs-container img {
     border-radius: 50%;
     border: 1px solid var(--dark-teal);
     width: 13rem;
