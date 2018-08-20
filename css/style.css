@@ -268,3 +268,30 @@ nav ul a {
     align-self: center;
     padding: 1rem;
 }
+
+/*** Footer ***/
+.footer{
+    display: grid;
+    grid-template-rows: 1fr auto;
+    background: var(--light-grey);
+    grid-gap: 1rem;
+}
+
+.footer div{
+    text-align: center;
+}
+
+.footer__container1{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    color: var(--dark-teal);
+}
+
+.footer__container1 div{
+    padding: 2rem;
+}
+
+.footer__container2{
+    padding: 2rem;
+    color: var(--middle-grey);
+}
