@@ -42,8 +42,6 @@ body {
 }
 
 .wrapper {
-    height: 100%;
-    padding: 1rem;
     display: grid;
     grid-template: [header-top] "logo nav nav" 20% [header-bottom intro-top] "intro intro intro" 30% [intro-bottom content-top]"side-left content side-right" 30% [content-bottom footer-top] "footer footer footer" 20%[footer-bottom] / 2fr 2.5fr 2fr;
     grid-gap: 10px;
