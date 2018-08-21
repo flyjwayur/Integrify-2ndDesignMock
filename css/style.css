@@ -136,11 +136,11 @@ nav ul a {
 }
 
 .intro-left {
-    width: 60%;
+    flex-basis: 60%;
 }
 
 .intro-img {
-    width: 40%;
+    flex-basis: 40%;
 }
 
 .intro:before {
@@ -158,6 +158,7 @@ nav ul a {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
+    align-content: center;
 }
 
 .intro__left section div {
@@ -165,6 +166,9 @@ nav ul a {
     padding-bottom: 1.5rem;
 }
 
+.intro__circle-imgs-container {
+    display: flex;
+}
 
 .intro__circle-imgs-container img {
     border-radius: 50%;
@@ -172,6 +176,7 @@ nav ul a {
     width: 13rem;
     height: 13rem;
     padding: 0.2rem;
+    margin: 0.5rem;
 }
 
 .intro__main-text {
@@ -309,4 +314,119 @@ nav ul a {
 .footer__containerBottom {
     padding: 2rem;
     color: var(--middle-grey);
+}
+
+/****** Media queries *******/
+
+/* Small devices (portrait tablets and large phones, 768px and down) */
+
+@media only screen and (max-width: 768px) {
+    /*** Entire layout with Grid ***/
+    .wrapper {
+        display: grid;
+        grid-template: [header-top] "logo nav" 20% [header-bottom intro-top] "intro intro" 30% [intro-bottom content-top] "content content" 30% [content-bottom side-left-right-top] "side-left side-right" 30% [side-left-right-bottom footer-top] "footer footer" 20%[footer-bottom] / 1fr 1fr;
+    }
+    /*** Header ***/
+    /* Header >> nav */
+    nav ul {
+        list-style-type: none;
+        display: flex;
+        flex-wrap: wrap;
+    }
+    nav ul li {
+        display: inline-block;
+        background: linear-gradient(var(--white) 0.4rem, var(--middle-grey));
+        border-bottom: 1px solid var(--middle-grey);
+        box-shadow: inset -5px -5px 10px 20px var(--alpha-middle-grey);
+        text-align: center;
+        align-self: center;
+        padding: 1rem;
+        margin: 0.2rem;
+        flex: 1 20%;
+    }
+    /*** Intro ***/
+    .intro-left {
+        flex: 100%;
+    }
+    .intro__circle-imgs-container img {
+        border-radius: 50%;
+        border: 1px solid var(--dark-teal);
+        width: 10rem;
+        height: 10rem;
+        padding: 0.2rem;
+        margin: 0.5rem;
+    }
+    .intro__smiling_man {
+        display: none;
+    }
+    /*** Footer ***/
+    .footer__containerTop {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(100px, 1fr));
+        grid-template-rows: repeat(3, 1fr);
+        color: var(--dark-teal);
+    }
+    .footer__containerTop div:last-child {
+        grid-column: 1/3;
+    }
+}
+
+/* Extra small devices (phones, 600px and down) */
+
+@media only screen and (max-width: 600px) {
+    /*** Entire layout with Grid ***/
+    .wrapper {
+        display: grid;
+        grid-template: [logo-top] "logo" 10% [logo-bottom nav-top] "nav" 20% [nav-bottom intro-top] "intro" 30% [intro-bottom content-top] "content" 30%[content-top side-left-top] "side-left" 30% [side-left-bottom side-right-top]"side-right" 30% [side-right-bottom footer-top] "footer" 20%[footer-bottom] / 1fr;
+    }
+    /*** Intro ***/
+    .intro__circle-imgs-container {
+        justify-content: center;
+    }
+    .intro__circle-imgs-container img {
+        border-radius: 50%;
+        border: 1px solid var(--dark-teal);
+        width: 7rem;
+        height: 7rem;
+        padding: 0.2rem;
+    }
+    /*** Footer ***/
+    .footer__containerTop {
+        display: grid;
+        grid-template-columns: auto;
+        color: var(--dark-teal);
+    }
+    .footer__containerTop div {
+        grid-column: 1/3;
+    }
+}
+
+/* Medium devices (landscape tablets, 992px and down) */
+
+@media only screen and (max-width: 992px) {
+    /*** Header ***/
+    /* Header >> nav */
+    nav ul {
+        list-style-type: none;
+        display: flex;
+        flex-wrap: wrap;
+    }
+    nav ul li {
+        display: inline-block;
+        background: linear-gradient(var(--white) 0.4rem, var(--middle-grey));
+        border-bottom: 1px solid var(--middle-grey);
+        box-shadow: inset -5px -5px 10px 20px var(--alpha-middle-grey);
+        text-align: center;
+        align-self: center;
+        padding: 1rem;
+        margin: 0.2rem;
+        flex: 1 20%;
+    }
+    /*** Intro ***/
+    .intro_img {
+        display: none;
+    }
+    .intro__smiling_man {
+        display: none;
+    }
 }
